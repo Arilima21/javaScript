@@ -16,3 +16,8 @@ function verificarEntrada(entrada){
 verificarEntrada(4);       //A entrada é par
 verificarEntrada(7);       //A entrada é ímpar
 verificarEntrada('texto')  //A entrada é uma string
+
+for(var x = 0; x<3; x++) {
+    console.log(verificarEntrada(6));
+    console.log(verificarEntrada(Ariane));
+}
