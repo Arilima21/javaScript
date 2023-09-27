@@ -93,15 +93,17 @@
                 <h2>Extrato</h2>
                 <button onclick="visualizarContas()">Visualizar</button>
             </div>
+            <div>
+                <h2>Deletar Conta:</h2>
+
+            <select id="contasDropdown" onchange="visualizarContas()"></select>
+            <button onclick="deletarConta()" class="button">Deletar Conta</button>
+            </div>
         </div>
         <div class="right-panel">
             <h2>Saldo e Extrato</h2>
             <div>
-                <h3>Saldo:</h3>
-                <p id="saldoExtrato"></p>
-            </div>
-            <div>
-                <h3>Extrato:</h3>
+                <h3></h3>
                 <ul id="listaContas">
                 </ul>
             </div>
@@ -202,6 +204,15 @@
             }
         }
 
+        function deletarConta() {
+    const contasDropdown = document.getElementById("contasDropdown");
+    const selectedIndex = contasDropdown.value;
+    if (selectedIndex !== "") {
+        contas.splice(selectedIndex, 1);
+        atualizarDropdown();
+        limparCampos();
+    }
+}
     </script>
 </body>
 </html>
